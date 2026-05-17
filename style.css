@@ -1,0 +1,210 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f0e0c;
+  --bg2: #1a1815;
+  --bg3: #231f1a;
+  --amber: #d97c14;
+  --amber-light: #f0a030;
+  --cream: #ede8df;
+  --muted: #9a9087;
+  --border: rgba(237,232,223,0.08);
+  --border-amber: rgba(217,124,20,0.3);
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--bg);
+  color: var(--cream);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  padding-top: 80px; /* Spazio per la nav fissa */
+}
+
+/* NAVIGAZIONE */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 3rem;
+  background: rgba(15,14,12,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--amber); }
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.nav-links a:hover, .nav-links a.active { color: var(--amber-light); }
+
+/* COMPONENTI BASE */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.page-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.03em;
+  color: var(--amber);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+/* RIQUADRI IMMAGINI (PLACEHOLDER) */
+.img-placeholder {
+  background: var(--bg3);
+  border: 2px dashed var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 300px;
+  margin-bottom: 2rem;
+}
+
+/* GRIGLIE */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* LOGHI NETWORK */
+.network-bar {
+  background: var(--cream);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  color: var(--bg);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* SERVIZI LISTA */
+.service-box {
+  background: var(--bg2);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--amber);
+}
+
+.service-box h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: var(--cream);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.service-list li {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.service-list li::before {
+  content: '✓';
+  color: var(--amber);
+}
+
+/* BOTTONI */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--amber);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 3px;
+  margin-top: 1rem;
+}
+.btn:hover { background: var(--amber-light); }
+
+.allinea-destra {
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.allinea-centro {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.grid-2 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Questo centra l'immagine! */
+  border-radius: 8px; /* Aggiunge un bordino arrotondato elegante */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Dà un po' di profondità */
+}
+
+/* FOOTER */
+footer {
+  background: var(--bg2);
+  padding: 3rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+}
