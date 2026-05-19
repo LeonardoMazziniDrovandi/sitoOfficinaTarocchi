@@ -209,6 +209,70 @@ footer {
   margin-top: 4rem;
 }
 
+/* STILI DEL MODULO DI PRENOTAZIONE (FORM) */
+.custom-form {
+  background: var(--bg2);
+  padding: 3rem;
+  border: 1px solid var(--border);
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.form-section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: var(--amber);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.form-group input, .form-group select {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 0.8rem;
+  color: var(--cream);
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  border-radius: 3px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--amber);
+}
+
+.form-group select option {
+  background: var(--bg3);
+  color: var(--cream);
+}
+
 /* =========================================
    ADATTAMENTO PER DISPOSITIVI MOBILI (SMARTPHONE)
    Tutto ciò che è fuori da questo blocco resta invariato su PC
@@ -265,6 +329,36 @@ footer {
     margin: 0 auto 1.5rem auto;
     max-width: 80% !important;
   }
+  
+  /* Adattamento form per smartphone */
+  .custom-form {
+    padding: 1.5rem;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+  
+	  /* Estetica per l'area delle note */
+	.form-group textarea {
+	  background: var(--bg3);
+	  border: 1px solid var(--border);
+	  padding: 0.8rem;
+	  color: var(--cream);
+	  font-family: 'Barlow', sans-serif;
+	  font-size: 1rem;
+	  border-radius: 3px;
+	  transition: border-color 0.2s;
+	  resize: vertical; /* Permette all'utente di allungarla solo in verticale */
+	}
+
+	.form-group textarea:focus {
+	  outline: none;
+	  border-color: var(--amber);
+	}
 
   /* Adatta la larghezza della mappa di Google (Iframe) al 100% dello schermo */
   iframe {
